@@ -60,7 +60,7 @@ clean:
 	-$(MAKE) -C $(PL_EXAMPLE_PATH) clean
 	-$(MAKE) -C $(VAI_DPU_TRD_PATH) clean
 	-$(MAKE) -C platforminfo  clean
-	cd $(VAI_DPU_TRD_PATH) && git reset --hard
+	cd $(VAI_DPU_TRD_PATH) ; git reset --hard
 
 ultraclean:clean
 	rm -rf Vitis_Accel_Examples Vitis-AI
