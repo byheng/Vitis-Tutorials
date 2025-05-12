@@ -89,3 +89,4 @@ clean:
 	rm -rf  IDE.log $(PLATFORM_NAME) $(PLATFORM_NAME_FSBL) device-tree-xlnx  mydevice
 ultraclean:clean
 	rm -rf   $(SW_COMP) $(BOOT) $(SD_DIR)   $(SYSROOT)
+	rm -rf .metadata .Xil .analytics
