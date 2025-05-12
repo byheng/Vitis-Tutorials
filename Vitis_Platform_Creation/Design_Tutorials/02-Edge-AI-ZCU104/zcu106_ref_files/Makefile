@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-XSA=step1_vivado/build/vivado/zcu104_custom_platform_hw.xsa
-XPFM=step2_pfm/zcu104_custom/export/zcu104_custom/zcu104_custom.xpfm
+XSA=step1_vivado/build/vivado/zcu106_custom_platform_hw.xsa
+XPFM=step2_pfm/zcu106_custom/export/zcu106_custom/zcu106_custom.xpfm
 VERSION				?=2022.2
 COMMON_IMAGE_ZYNQMP 	?=${PLATFORM_REPO_PATHS}/sw/zynqmp/xilinx-zynqmp-common-v$(VERSION)/
 

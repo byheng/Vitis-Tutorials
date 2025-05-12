@@ -27,7 +27,7 @@ if { [string equal -nocase fsbl [lindex $argv 3]] } {
     
     puts "create a simple Platform to get FSBL  and PMU"
     platform create -name $platform_name \
-    -desc "A custom platform ZCU104 platform" \
+    -desc "A custom platform ZCU106 platform" \
     -hw ${xsa_path}/${xsa_name}_hw.xsa \
     -hw_emu ${xsa_path}/${xsa_name}_hwemu.xsa \
     -fsbl-target psu_cortexa53_0
@@ -41,7 +41,7 @@ if { [string equal -nocase fsbl [lindex $argv 3]] } {
     
     puts "create final Vitis platform"
     platform create -name $platform_name \
-        -desc "A custom platform ZCU104 platform" \
+        -desc "A custom platform ZCU106 platform" \
         -hw ${xsa_path}/${xsa_name}_hw.xsa \
         -hw_emu ${xsa_path}/${xsa_name}_hwemu.xsa \
         -no-boot-bsp    

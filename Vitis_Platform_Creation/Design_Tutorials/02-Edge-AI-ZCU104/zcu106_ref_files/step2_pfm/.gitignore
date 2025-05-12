@@ -5,3 +5,11 @@ image/boot.scr
 image/system.dtb
 .Xil
 .metadata
+boot
+sd_dir
+sw_comp
+sysroot
+zcu106_custom
+zcu106_custom_fsbl
+mydevice
+device-tree-xlnx

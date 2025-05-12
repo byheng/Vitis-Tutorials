@@ -13,7 +13,7 @@
 # limitations under the License.
 
 ROOT_DIR=$(realpath $(dir $(lastword $(MAKEFILE_LIST))))
-PLATFORM_NAME=zcu104_custom
+PLATFORM_NAME=zcu106_custom
 PLATFORM ?= $(ROOT_DIR)/../step2_pfm/$(PLATFORM_NAME)/export/$(PLATFORM_NAME)/$(PLATFORM_NAME).xpfm
 SW_COMP = $(ROOT_DIR)/../step2_pfm/sw_comp/
 SYSROOT=$(ROOT_DIR)/../step2_pfm/sysroot/
@@ -50,7 +50,7 @@ Vitis-AI:
 dpu-trd: Vitis-AI
 	sed -i '37 s/`define URAM_DISABLE/`define URAM_ENABLE/' $(VAI_DPU_TRD_PATH)/dpu_conf.vh
 	sed -i 's/Image/Image --package.sd_dir=..\/..\/app/' $(VAI_DPU_TRD_PATH)/Makefile
-	$(MAKE) -C $(VAI_DPU_TRD_PATH) all DEVICE=zcu104 SDX_PLATFORM=$(PLATFORM) EDGE_COMMON_SW=$(SW_COMP)
+	$(MAKE) -C $(VAI_DPU_TRD_PATH) all DEVICE=zcu106 SDX_PLATFORM=$(PLATFORM) EDGE_COMMON_SW=$(SW_COMP)
 	
 
 platforminfo:
@@ -60,7 +60,7 @@ clean:
 	-$(MAKE) -C $(PL_EXAMPLE_PATH) clean
 	-$(MAKE) -C $(VAI_DPU_TRD_PATH) clean
 	-$(MAKE) -C platforminfo  clean
-	cd $(VAI_DPU_TRD_PATH); git reset --hard
+	cd $(VAI_DPU_TRD_PATH) && git reset --hard
 
 ultraclean:clean
 	rm -rf Vitis_Accel_Examples Vitis-AI

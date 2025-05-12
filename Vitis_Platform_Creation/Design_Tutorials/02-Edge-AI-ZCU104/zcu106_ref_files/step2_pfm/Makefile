@@ -13,9 +13,9 @@
 # limitations under the License.
 
 ROOT_DIR=$(realpath $(dir $(lastword $(MAKEFILE_LIST))))
-XSA_NAME=zcu104_custom_platform
-PLATFORM_NAME=zcu104_custom
-PLATFORM_NAME_FSBL=zcu104_custom_fsbl
+XSA_NAME=zcu106_custom_platform
+PLATFORM_NAME=zcu106_custom
+PLATFORM_NAME_FSBL=zcu106_custom_fsbl
 VERSION=2022.2
 COMMON_IMAGE_ZYNQMP ?=${PLATFORM_REPO_PATHS}/sw/zynqmp/xilinx-zynqmp-common-v$(VERSION)/
 BOOT=boot
@@ -59,7 +59,7 @@ sw_comps:$(COMMON_IMAGE_ZYNQMP)/Image
 #echo command is to avoid the return error code caused by the createdts command warning	
 dtb:
 	@echo "execute createdts to generate dtb file"
-	-xsct -eval " createdts -hw ../step1_vivado/build/vivado/$(XSA_NAME)_hw.xsa -zocl  -platform-name mydevice -out .  -git-branch xlnx_rel_v2022.2 -board  zcu104-revc -dtsi system-user.dtsi -compile" \
+	-xsct -eval " createdts -hw ../step1_vivado/build/vivado/$(XSA_NAME)_hw.xsa -zocl  -platform-name mydevice -out .  -git-branch xlnx_rel_v2022.2 -board  zcu106-reva -dtsi system-user.dtsi -compile" \
 	&& echo -e "\n***Device Tree generation Successful!\n" || echo -e "\n"
 	cp mydevice/psu_cortexa53_0/device_tree_domain/bsp/system.dtb $(BOOT)/
 	cp mydevice/psu_cortexa53_0/device_tree_domain/bsp/system.dtb $(SD_DIR)/
